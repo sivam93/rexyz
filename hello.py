@@ -21,6 +21,11 @@ def forgotpassword():
     return render_template('/forgotpassword.html',output = "hide")
 
 
+@app.route('/newuser')
+def newuser():
+    print('1')
+    return render_template('/newuser.html')
+
 @app.route('/loginCred', methods = ['POST'])
 def loginCred():
     user=request.form['userName']
