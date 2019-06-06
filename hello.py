@@ -5,14 +5,49 @@ app = Flask(__name__)
 
 
 
-@app.route('/admin')
-def hello_admin():
-   return 'Hello Admin'
-     
+
+@app.route('/login')
+def login():
+    return render_template('/index.html')
 
 @app.route('/')
 def hello():   
     return "HOME"
+
+
+@app.route('/forgotpassword')
+def forgotpassword():
+    print('1')
+    return render_template('/forgotpassword.html',output = "hide")
+
+
+app.route('/loginCred', methods = ['POST'])
+def loginCred():
+    user=request.form['userName']
+    password=request.form['Password']
+    
+    if user in dict:
+        if (dict.get(user)==password):
+           
+           return render_template('/newpage.html', output ='Login SuccessFul')
+         
+        else:
+             return render_template('/index.html', output ='Wrong Passoword')
+
+    else:      
+        return render_template('/index.html',output ='User Not Found. register User')
+
+
+@app.route('/usercheck', methods = ['POST'])
+def newpassowrd():
+     user=request.form['userName']
+     print('userss')
+     if(operations.operations(dict,user)):
+       print('usersss34')
+       return render_template('forgotpassword.html', output = "show")
+     else:
+       return render_template('forgotpassword.html', output = "hide")
+
 
 if __name__ == '__main__':
    port = int(os.getenv('PORT', 5000))

@@ -1,0 +1,58 @@
+body {
+    background-color: rgb(179, 179, 179);
+    margin: 0;
+    padding: 0;
+}
+
+.login {
+    width: 320px;
+    height: 220px;
+    background-color: #FFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: solid;
+    border-color: black;
+}
+
+.login>div {
+    width: 285px;
+    margin: auto;
+    padding: 20px 0 0 0;
+    text-align: left;
+    border-color:black;
+}
+
+
+
+
+.user {
+    height: 35px;
+    width: 220px;
+    border: none;
+}
+
+.user-textbox {
+    padding: 20px 0 0 0;
+    border-bottom: 1px solid #9DA6AB;
+}
+
+.user-pwd {
+    padding: 20px 0 0 0;
+    border-bottom: 1px solid #9DA6AB;
+}
+
+
+.loginButton {
+
+    border: none;
+    outline: none;
+    height: 35px;
+    background: #0078D2;
+    padding: 20px 0 0 0;
+    color: #fff;
+    font-size: 18px;
+    width: 220px;
+}
