@@ -3,6 +3,7 @@ import time
 import os
 import operations
 import database
+import psycopg2
 app = Flask(__name__)
 
 
