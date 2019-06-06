@@ -1,9 +1,9 @@
 from flask import Flask, redirect, url_for,render_template,request
 import time
 import os
+import operations
+import database
 app = Flask(__name__)
-
-
 
 
 @app.route('/login')
@@ -14,24 +14,21 @@ def login():
 def hello():   
     return "HOME"
 
-
 @app.route('/forgotpassword')
 def forgotpassword():
     print('1')
     return render_template('/forgotpassword.html',output = "hide")
 
 
-app.route('/loginCred', methods = ['POST'])
+@app.route('/loginCred', methods = ['POST'])
 def loginCred():
     user=request.form['userName']
     password=request.form['Password']
-    
-    if user in dict:
-        if (dict.get(user)==password):
-           
-           return render_template('/newpage.html', output ='Login SuccessFul')
-         
-        else:
+    if(operations.operationsUsernameCheck(user)):
+       if(operations.operationsPasswordCheck(user,password)):
+           print(user,password)
+           return render_template('/newpage.html', output ='Login SuccessFul') 
+       else:
              return render_template('/index.html', output ='Wrong Passoword')
 
     else:      
@@ -41,9 +38,7 @@ def loginCred():
 @app.route('/usercheck', methods = ['POST'])
 def newpassowrd():
      user=request.form['userName']
-     print('userss')
      if(operations.operations(dict,user)):
-       print('usersss34')
        return render_template('forgotpassword.html', output = "show")
      else:
        return render_template('forgotpassword.html', output = "hide")
