@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # Load the dataset in a dataframe object and include only four features as mentioned
-url = "http://s3.amazonaws.com/assets.datacamp.com/course/Kaggle/train.csv"
+url = "/train.csv"
 df = pd.read_csv(url)
 include = ['Age', 'Sex', 'Embarked', 'Survived'] # Only four features
 df_ = df[include]
