@@ -21,7 +21,7 @@ numpy==1.16.4
 onelogin==1.8.1
 pandas==0.24.2
 pkgconfig==1.5.1
-psutil==5.6.2
+psutil==5.6.6
 psycopg2==2.8.2
 pycparser==2.19
 pymssql==2.1.4
